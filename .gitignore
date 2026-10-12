@@ -18,3 +18,11 @@ logs/
 
 # IDE and temporary files
 .cursor/index/
+
+# Credentials and secrets
+*.pem
+*.p12
+*service-account*.json
+*credentials*.json
+profiles.yml
+.env.*
