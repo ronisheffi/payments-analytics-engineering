@@ -1,0 +1,11 @@
+business_id,business_name,country_code,identity_group_code,identity_group_description,status,create_at,update_at,delete_at
+BIZ_0001,Madrid Wellness Studio,ES,WELLNESS,Health and wellness services,active,2024-01-22 00:00:00+00:00,2024-01-22 00:00:00+00:00,
+BIZ_0002,Barcelona Fitness Club,ES,FITNESS,Fitness and sports,active,2024-01-29 00:00:00+00:00,2024-01-29 00:00:00+00:00,
+BIZ_0003,Valencia Beauty Salon,ES,BEAUTY,Beauty services,active,2024-02-05 00:00:00+00:00,2024-02-05 00:00:00+00:00,
+BIZ_0004,Sevilla Yoga Center,ES,WELLNESS,Health and wellness services,active,2024-02-12 00:00:00+00:00,2024-02-12 00:00:00+00:00,
+BIZ_0005,Bilbao Coffee House,ES,FOOD,Food and beverages,active,2024-02-19 00:00:00+00:00,2024-02-19 00:00:00+00:00,
+BIZ_0006,Malaga Dance Academy,ES,EDUCATION,Dance education,active,2024-02-26 00:00:00+00:00,2024-02-26 00:00:00+00:00,
+BIZ_0007,Granada Hair Studio,ES,BEAUTY,Beauty services,active,2024-03-04 00:00:00+00:00,2024-03-04 00:00:00+00:00,
+BIZ_0008,Alicante Language School,ES,EDUCATION,Language education,active,2024-03-11 00:00:00+00:00,2024-03-11 00:00:00+00:00,
+BIZ_0009,Toledo Photography Studio,ES,CREATIVE,Photography services,active,2024-03-18 00:00:00+00:00,2024-03-18 00:00:00+00:00,
+BIZ_0010,Zaragoza Pilates Club,ES,FITNESS,Fitness and sports,active,2024-03-25 00:00:00+00:00,2024-03-25 00:00:00+00:00,
