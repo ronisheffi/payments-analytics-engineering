@@ -1,0 +1,103 @@
+version: 2
+
+models:
+  - name: int_direct_request_entities
+    description: >
+      Resolves direct payment requests to their business entities.
+      Excludes meetings and events absorbed into carts.
+      Grain: one row per direct payment request.
+
+    columns:
+      - name: payment_request_id
+        description: "Original payment request identifier."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: business_id
+        data_tests:
+          - not_null
+
+      - name: entity_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['meeting', 'event', 'product', 'service']
+
+      - name: entity_id
+        data_tests:
+          - not_null
+
+      - name: payment_flow
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['direct']
+
+  - name: int_cart_request_entities
+    description: >
+      Expands cart payment requests into individual order items.
+      Supports POS and non-POS carts without filtering by status.
+      Grain: one row per payment request and order item.
+
+    columns:
+      - name: payment_request_id
+        data_tests:
+          - not_null
+
+      - name: order_item_id
+        description: "Identifies an individual item within a cart."
+        data_tests:
+          - not_null
+
+      - name: cart_id
+        data_tests:
+          - not_null
+
+      - name: payment_flow
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['pos', 'non_pos_cart', 'unknown_cart']
+
+      - name: item_amount
+        description: "Amount associated with the individual cart item."
+        data_tests:
+          - not_null
+
+  - name: int_legacy_payment_requests
+    description: >
+      Creates synthetic analytical requests for legacy payments
+      that have no original payment request.
+      Grain: one row per legacy payment.
+
+    columns:
+      - name: payment_request_id
+        description: "Synthetic identifier generated from payment_id."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: source_payment_id
+        description: "Original payment identifier for traceability."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: payment_flow
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['legacy_payment']
+
+      - name: is_synthetic_request
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true]
+                quote: false
