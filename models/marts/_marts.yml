@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fct_payment_request_entities
+    description: >
+      Unified analytical model of direct payment requests,
+      cart-based requests and synthetic legacy requests.
+      Grain: one row per direct request, cart order item,
+      or legacy payment.
+
+    columns:
+      - name: request_entity_key
+        description: "Unique analytical row identifier."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: payment_request_id
+        data_tests:
+          - not_null
+
+      - name: payment_flow
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - direct
+                  - pos
+                  - non_pos_cart
+                  - unknown_cart
+                  - legacy_payment
+
+      - name: is_synthetic_request
+        data_tests:
+          - not_null
+
+      - name: request_count_once
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]

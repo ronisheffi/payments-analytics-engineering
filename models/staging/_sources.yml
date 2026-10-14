@@ -1,0 +1,20 @@
+# Defines the raw BigQuery tables used as data sources.
+# Allows dbt models to reference them using source().
+
+version: 2
+
+sources:
+  - name: raw
+    database: payments-analytics-portfolio
+    schema: raw
+    tables:
+      - name: businesses
+      - name: clients
+      - name: meetings
+      - name: events
+      - name: products
+      - name: services
+      - name: carts
+      - name: order_items
+      - name: payment_requests
+      - name: payments

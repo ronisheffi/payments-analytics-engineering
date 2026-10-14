@@ -1,0 +1,145 @@
+version: 2
+
+models:
+  - name: stg_payment_requests
+    description: "Standardized payment requests. One row per payment request."
+    columns:
+      - name: payment_request_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: business_id
+        data_tests:
+          - not_null
+
+      - name: entity_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - meeting
+                  - event
+                  - product
+                  - service
+                  - cart
+
+      - name: entity_id
+        data_tests:
+          - not_null
+
+      - name: request_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - paid
+                  - unpaid
+
+      - name: requested_amount
+        data_tests:
+          - not_null
+
+  - name: stg_payments
+    description: "Payments linked to requests or standalone legacy payments."
+    columns:
+      - name: payment_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: business_id
+        data_tests:
+          - not_null
+
+      - name: payment_request_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_payment_requests')
+                field: payment_request_id
+
+      - name: payment_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - paid
+
+  - name: stg_carts
+    description: "Carts used in POS and non-POS payment flows."
+    columns:
+      - name: cart_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: business_id
+        data_tests:
+          - not_null
+
+  - name: stg_order_items
+    description: "Individual business entities contained in carts."
+    columns:
+      - name: order_item_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: cart_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_carts')
+                field: cart_id
+
+  - name: stg_businesses
+    columns:
+      - name: business_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_clients
+    columns:
+      - name: client_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: business_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_businesses')
+                field: business_id
+
+  - name: stg_meetings
+    columns:
+      - name: meeting_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_events
+    columns:
+      - name: event_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_products
+    columns:
+      - name: product_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_services
+    columns:
+      - name: service_id
+        data_tests:
+          - unique
+          - not_null
