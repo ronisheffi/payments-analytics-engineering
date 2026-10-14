@@ -1,0 +1,11 @@
+event_id,business_id,event_name,description,event_at,create_at,update_at,delete_at
+EVT_0001,BIZ_0001,Summer Wellness Retreat,Group event: Summer Wellness Retreat,2024-03-07 00:00:00+00:00,2024-02-06 00:00:00+00:00,2024-02-06 00:00:00+00:00,
+EVT_0002,BIZ_0002,Business Networking Evening,Group event: Business Networking Evening,2024-03-14 00:00:00+00:00,2024-02-13 00:00:00+00:00,2024-02-13 00:00:00+00:00,
+EVT_0003,BIZ_0003,Photography Masterclass,Group event: Photography Masterclass,2024-03-21 00:00:00+00:00,2024-02-20 00:00:00+00:00,2024-02-20 00:00:00+00:00,
+EVT_0004,BIZ_0004,Community Fitness Day,Group event: Community Fitness Day,2024-03-28 00:00:00+00:00,2024-02-27 00:00:00+00:00,2024-02-27 00:00:00+00:00,
+EVT_0005,BIZ_0005,Creative Workshop,Group event: Creative Workshop,2024-04-04 00:00:00+00:00,2024-03-05 00:00:00+00:00,2024-03-05 00:00:00+00:00,
+EVT_0006,BIZ_0006,Yoga Weekend,Group event: Yoga Weekend,2024-04-11 00:00:00+00:00,2024-03-12 00:00:00+00:00,2024-03-12 00:00:00+00:00,
+EVT_0007,BIZ_0007,Entrepreneurship Conference,Group event: Entrepreneurship Conference,2024-04-18 00:00:00+00:00,2024-03-19 00:00:00+00:00,2024-03-19 00:00:00+00:00,
+EVT_0008,BIZ_0008,Music & Art Festival,Group event: Music & Art Festival,2024-04-25 00:00:00+00:00,2024-03-26 00:00:00+00:00,2024-03-26 00:00:00+00:00,
+EVT_0009,BIZ_0009,Personal Development Seminar,Group event: Personal Development Seminar,2024-05-02 00:00:00+00:00,2024-04-02 00:00:00+00:00,2024-04-02 00:00:00+00:00,
+EVT_0010,BIZ_0010,Healthy Living Workshop,Group event: Healthy Living Workshop,2024-05-09 00:00:00+00:00,2024-04-09 00:00:00+00:00,2024-04-09 00:00:00+00:00,
